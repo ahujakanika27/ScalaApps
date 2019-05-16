@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akka-server
+  namespace: core
+spec:
+  selector:
+    matchLabels:
+      app: akka-server
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: akka-server
+    spec:
+      containers:
+      - name: akka-server
+        image: akka-server:0.1.0-SNAPSHOT
+        ports:
+        - containerPort: 8080

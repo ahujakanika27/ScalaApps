@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: akka-server
+  labels:
+    app: akka-server
+spec:
+  selector:
+    app: akka-server
+  type: NodePort
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: http
