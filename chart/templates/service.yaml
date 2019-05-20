@@ -7,9 +7,10 @@ metadata:
 spec:
   selector:
     app: akka-server
-  type: ClusterIP
+  type:   NodePort
   ports:
     - name: http
       protocol: TCP
       port: 8080
+      nodePort: 31122
       targetPort: 8080
